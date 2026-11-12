@@ -1,5 +1,5 @@
 [project]
-name = "pet-projects"
+name = "task_manager_cli"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"

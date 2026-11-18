@@ -1,12 +1,16 @@
 import sys
 
+from task_manager import TaskManager
+
 
 def main(args: list[str]) -> None:
     if len(args) >= 2:
         command = args[0]
         title = args[1]
         if command == "add":
-            print(title)
+            manager = TaskManager()
+            task = manager.add_task(title)
+            print(task)
         else:
             print("Неизвестная команда")
     else:

@@ -9,8 +9,11 @@ def main(args: list[str]) -> None:
         title = args[1]
         if command == "add":
             manager = TaskManager()
-            task = manager.add_task(title)
-            print(task)
+            try:
+                task = manager.add_task(title)
+                print(task)
+            except ValueError:
+                print("Название задачи не должно быть пустым")
         else:
             print("Неизвестная команда")
     else:

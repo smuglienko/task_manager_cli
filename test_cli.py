@@ -18,3 +18,9 @@ def test_missing_title(capsys: pytest.CaptureFixture[str]) -> None:
     main(args=["add"])
     captured = capsys.readouterr()
     assert captured.out == "Укажите команду и название задачи\n"
+
+
+def test_blank_title_prints_error(capsys: pytest.CaptureFixture[str]) -> None:
+    main(args=["add", " "])
+    captured = capsys.readouterr()
+    assert captured.out == "Название задачи не должно быть пустым\n"
